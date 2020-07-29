@@ -51,8 +51,7 @@ const MovieForm = () => {
     setDuration('');
     setSearch('');
   };
-  const onKeyUp = (e) => {
-    
+  const onKeyUp = () => {   
     dispatch(findMovie(search));
 
     if (search === '') {
