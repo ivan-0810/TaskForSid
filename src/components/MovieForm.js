@@ -35,8 +35,15 @@ const MovieForm = () => {
     if (findName.length > 0) {
       dispatch(updateMovie(findName[0].id, finalMovie));
     } else {
-      console.log('vlese');
-      dispatch(addMovie(finalMovie));
+      if(search !== "") { 
+        
+        dispatch(loadMovies(fakeApi));
+        dispatch(addMovie(finalMovie));
+      }else {
+        dispatch(addMovie(finalMovie));
+      }
+      
+      
     }
 
     setName('');
