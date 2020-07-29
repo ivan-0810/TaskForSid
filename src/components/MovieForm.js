@@ -47,7 +47,7 @@ const MovieForm = () => {
   const onKeyUp = (e) => {
     
     dispatch(findMovie(search));
-    
+
     if (search === '') {
       dispatch(loadMovies(fakeApi));
     }
@@ -58,44 +58,44 @@ const MovieForm = () => {
     <div className="movie-form" style={style}>
       <Form onSubmit={handleSubmit}>
         <FormGroup>
-          <Label>Movie Name</Label>
+          <Label className="font-weight-bold">Movie Name</Label>
           <Input
             type="text"
             name="movie-name"
             id="name"
             onChange={(e) => setName(e.target.value)}
             value={name}
-            placeholder="with a placeholder"
+            placeholder="Add Name"
           />
         </FormGroup>
         <FormGroup>
-          <Label>Rating</Label>
+          <Label className="font-weight-bold">Rating</Label>
           <Input
             type="text"
             name="movie-rating"
             onChange={(e) => setRating(e.target.value)}
             value={rating}
             id="rating"
-            placeholder="with a placeholder"
+            placeholder="Add Rating"
           />
         </FormGroup>
         <FormGroup>
-          <Label>Duration</Label>
+          <Label className="font-weight-bold">Duration</Label>
           <Input
             type="text"
             name="movie-duration"
             onChange={(e) => setDuration(e.target.value)}
             value={duration}
             id="duration"
-            placeholder="with a placeholder"
+            placeholder="Add Duration"
           />
         </FormGroup>
-        <Button onSubmit={handleSubmit} color="primary">
+        <Button size="sm" onSubmit={handleSubmit} color="primary">
           Submit
         </Button>
       </Form>
-      <FormGroup>
-        <Label>Search</Label>
+      <FormGroup style={{marginTop:"50px"}}>
+        <Label className="font-weight-bold">Search</Label>
         <Input
           type="text"
           onChange={(e) => setSearch(e.target.value)}
