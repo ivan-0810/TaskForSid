@@ -8,7 +8,7 @@ const RenderMovies = () => {
 
   useEffect(() => {
     dispatch(loadMovies(fakeApi));
-  }, []);
+  }, [dispatch]);
 
   const style = {
     display: 'flex',

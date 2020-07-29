@@ -6,10 +6,17 @@ import store from './store/store';
 import RenderMovies from './components/RenderMovies';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
 function App() {
   return (
     <Provider store={store}>
+      <h1
+        style={{
+          marginBottom: '50px',
+          textAlign: 'center',
+        }}
+      >
+        Movie Rating
+      </h1>
       <Fragment>
         <MovieForm />
         <RenderMovies />

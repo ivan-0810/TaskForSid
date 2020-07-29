@@ -1,7 +1,6 @@
 import * as types from './actionTypes';
 
 export const loadMovies = (movies) => (dispatch) => {
-  console.log(movies);
   dispatch({
     type: types.LOAD_MOVIES,
     payload: movies,
