@@ -5,6 +5,8 @@ import MovieForm from './components/MovieForm';
 import store from './store/store';
 import RenderMovies from './components/RenderMovies';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import MultiForms from './components/MultiForms';
+import Form2 from './components/Form2';
 
 function App() {
   return (
@@ -18,8 +20,10 @@ function App() {
         Movie Rating
       </h1>
       <Fragment>
-        <MovieForm />
-        <RenderMovies />
+        {/* <MovieForm />
+        <RenderMovies /> */}
+        <Form2 />
+        {/* <MultiForms /> */}
       </Fragment>
     </Provider>
   );

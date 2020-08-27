@@ -7,13 +7,19 @@ import {
   findMovie,
   loadMovies,
 } from '../store/actions/actions';
+import { Field, reduxForm, FormSection } from 'redux-form';
 import { fakeApi } from '../fakeApi';
+import axios from 'axios'
 
-const MovieForm = () => {
+
+const MovieForm = (props) => {
   const [name, setName] = useState('');
   const [rating, setRating] = useState('');
   const [duration, setDuration] = useState('');
   const [search, setSearch] = useState('');
+
+  const { handleSubmit } = props
+
 
   const movies = useSelector((state) => state.movies);
 
@@ -23,7 +29,7 @@ const MovieForm = () => {
   };
   const dispatch = useDispatch();
 
-  const handleSubmit = (e) => {
+  const submit = (e) => {
     e.preventDefault();
     const finalMovie = {
       name,
@@ -62,8 +68,8 @@ const MovieForm = () => {
 
   return (
     <div className="movie-form" style={style}>
-      <Form onSubmit={handleSubmit}>
-        <FormGroup>
+      <Form onSubmit={handleSubmit(submit)}>
+        <FormGroup>  
           <Label className="font-weight-bold">Movie Name</Label>
           <Input
             type="text"
@@ -86,7 +92,6 @@ const MovieForm = () => {
           />
         </FormGroup>
         <FormGroup>
-          <Label className="font-weight-bold">Duration</Label>
           <Input
             type="text"
             name="movie-duration"
@@ -114,4 +119,6 @@ const MovieForm = () => {
   );
 };
 
-export default MovieForm;
+export default reduxForm({
+  form: 'editProfileImageForm'
+})(MovieForm);
