@@ -6,6 +6,11 @@ import imageField from './ImageField';
 import ImageField from './ImageField';
 import { useState } from 'react';
 
+const object = {
+    country_iso2: ['AL'],
+    image:''
+}
+
 const Form2 = (props) => {
   const [pImage, setpImage] = useState();
   const { handleSubmit } = props;
